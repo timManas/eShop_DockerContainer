@@ -1,10 +1,15 @@
 # eShop
 
-##Tech Stack
+## Purpose
+
+Setup MERN Stack using Docker Containers instead
+
+## Tech Stack
 
 1. FrontEnd - React
-2. BackEnd - Node
-3. Containerization - Docker
+2. BackEnd - Node/Express
+3. DB - MongoRB
+4. Containerization - Docker
 
 ### How to execute using Docker Containers
 
@@ -31,5 +36,14 @@
 
 ###Notes
 
-1. Ensure that line in package.json of frontend react app has this:
-   "proxy": "http://serverapp:5000"
+1. Ensure that line in package.json of frontend react app has this: <br />
+   "proxy": "http://serverapp:5000" <br />
+
+2. Dont forget to add .env file with the following <br />
+   NODE_ENV=development <br />
+   PORT=5000 <br />
+   MONGO_URI= <br />
+   JWT_SECRET=abc123 <br />
+   PAYPAL_CLIENT_ID= <br />
+   PAYPAL_APP_SECRET= <br />
+   PAYPAL_API_URL=https://api-m.sandbox.paypal.com <br />
