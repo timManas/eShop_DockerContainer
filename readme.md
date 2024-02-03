@@ -34,7 +34,12 @@ Setup MERN Stack using Docker Containers instead
 5. Run backend app on docker <br />
    docker run -d -p 5000:5000 --name serverapp --network webapp_network serverapp <br />
 
-###Notes
+## How to run using DockerCompose
+
+1. Go to root directory and run: <br />
+   docker-compose up -d <br />
+
+### Notes
 
 1. Ensure that line in package.json of frontend react app has this: <br />
    "proxy": "http://serverapp:5000" <br />

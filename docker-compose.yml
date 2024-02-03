@@ -1,0 +1,32 @@
+# The version of the docker-compose.
+version: '3.8'
+# Telling docker-compose to build the client and server images and run them in containers.
+services:
+  frontend:
+    # Telling docker-compose to build the client image using the Dockerfile in the client directory.
+    build: ./frontend
+    # Giving the container a name.
+    container_name: reactapp
+    image: 'reactapp'
+    # Mapping the port 3000 on the host machine to the port 3000 on the container.
+    ports:
+      - '3000:3000'
+    # Setup network for both containers to run in
+    networks:
+      - webapp_network
+
+  backend:
+    # Telling docker-compose to build the client image using the Dockerfile in the server directory.
+    build: ./
+    # Giving the container a name.
+    container_name: serverapp
+    image: 'serverapp'
+    ports:
+      - '5000:5000'
+    # Setup network for both containers to run in
+    networks:
+      - webapp_network
+
+# Setup network to connect both containers
+networks:
+  webapp_network:
